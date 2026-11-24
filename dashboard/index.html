@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — radar-3: pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<main id="app">
+  <header class="mast">
+    <div class="wrap">
+      <p class="kicker">TOKEN RADAR &middot; MODEL RADAR-3 &middot; SNAPSHOT <span id="asof">—</span> &middot; DEFILLAMA PROTOCOLS</p>
+      <h1>Token Radar</h1>
+      <p class="model">Implied value = TVL &times; fitted multiple &times; token odds from the peers&rsquo; record. Every coefficient is fitted on this snapshot and tested held-out twice (leave-one-out and walk-forward). Nothing is hardcoded, nothing is a list of names.</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="kpis" id="kpis" aria-label="Key evidence"></section>
+    <section class="integrity" id="integrity" aria-label="Integrity checks"></section>
+    <section id="evidence" aria-label="Out-of-sample evidence"></section>
+    <section class="accounting" id="accounting" aria-label="Protocol accounting"></section>
+    <section class="assumptions" id="assumptions" aria-label="Farm assumptions"></section>
+
+    <section class="board" id="board">
+      <div class="filters" id="filters"></div>
+      <div class="tablewrap">
+        <table id="tbl">
+          <thead id="thead"></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <p class="count" id="count"></p>
+    </section>
+
+    <footer class="foot">
+      <p>Every number on this page comes from the sealed snapshot or from a stated assumption. The board ranks the 198 pre-token protocols by implied value; the watchlist is the floor, never the ceiling. Farm steps were priced at the default assumptions; the verdict and net in the table follow the controls above.</p>
+    </footer>
+  </div>
+</main>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" type="button" aria-label="Close">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
